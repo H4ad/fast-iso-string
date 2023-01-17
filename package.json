@@ -1,0 +1,87 @@
+{
+  "name": "fast-iso-string",
+  "version": "1.0.0",
+  "description": "A faster implementation of new Date().toISOString().",
+  "main": "lib/index.js",
+  "types": "lib/index.ts",
+  "scripts": {
+    "prepare": "husky install",
+    "build": "rimraf lib && tsc -p tsconfig.build.json",
+    "prepack": "npm run build",
+    "clean": "rm -rf ./lib/",
+    "cm": "cz",
+    "coverage": "codecov --disable=gcov",
+    "lint": "eslint ./src/ ./test/  --fix",
+    "semantic-release": "semantic-release",
+    "test": "vitest --run",
+    "test:coverage": "vitest run --coverage",
+    "typecheck": "tsc --noEmit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/H4ad/fast-iso-string.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Vinícius Lourenço",
+    "email": "H4ad@users.noreply.github.com",
+    "url": "https://github.com/H4ad"
+  },
+  "engines": {
+    "node": ">=12.0"
+  },
+  "keywords": [
+    "date",
+    "unix",
+    "iso-string"
+  ],
+  "bugs": {
+    "url": "https://github.com/H4ad/fast-iso-string/issues"
+  },
+  "homepage": "https://github.com/H4ad/fast-iso-string#readme",
+  "files": [
+    "/lib",
+    "/npm-shrinkwrap.json"
+  ],
+  "devDependencies": {
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^8.0.4",
+    "@types/mockdate": "^3.0.0",
+    "@types/node": "14.18.34",
+    "@typescript-eslint/eslint-plugin": "^5.12.1",
+    "@typescript-eslint/parser": "^5.12.1",
+    "@vitest/coverage-c8": "^0.27.1",
+    "codecov": "^3.8.3",
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "^3.3.0",
+    "ejs": "^3.1.6",
+    "eslint": "^8.9.0",
+    "eslint-config-oclif": "^4",
+    "eslint-config-oclif-typescript": "^1.0.2",
+    "eslint-config-prettier": "^8.4.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^6.0.0",
+    "lint-staged": "^10.5.4",
+    "mockdate": "^3.0.5",
+    "prettier": "^2.5.1",
+    "semantic-release": "^19.0.3",
+    "ts-node": "^10.4.0",
+    "tslib": "^2.4.0",
+    "typescript": "^4.5.5",
+    "vitest": "^0.27.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "lint-staged": {
+    "*.ts": "eslint --cache --cache-location .eslintcache --fix"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
